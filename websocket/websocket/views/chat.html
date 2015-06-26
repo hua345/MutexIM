@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet" href="/css/myNav.css" />
+    <link rel="stylesheet" href="/css/Chat.css" />
+  </head>
+  <body>
+    <div class="chatNav">
+    <span class="chatNavLeft"><a href="/">首页</a></span>
+    <span>欢迎 <a id="myUserId" href=""><%= user.userId %></a> <%= user.nickName %> <%= user.sessionId %></span>
+    <span> | </span>
+    <span><a href="/logout">退出</a></span>
+    </div>
+      <h2><%= title %></h2>
+      <div id="chatContainer">
+          <section id="chat">
+              <div class="tabs tabs-style-tzoid">
+                  <nav>
+                      <ul>
+
+                      </ul>
+                  </nav>
+                  <div class="content-wrap">
+                     
+                  </div><!-- /content -->
+              </div><!-- /tabs -->
+          </section>
+          <section id="info">
+              <div class="tabs tabs-style-tzoid">
+                  <nav>
+                      <ul>
+                          <li><a href="#section-tzoid-friends" class="navIcon icon-friends"><span>好友</span></a></li>
+                          <li><a href="#section-tzoid-groups" class="navIcon icon-groups"><span>群组</span></a></li>
+                      </ul>
+                  </nav>
+                  <div class="content-wrap">
+                      <section id="section-tzoid-friends">
+                          <menu class="content">
+
+                          </menu>
+                        </section>
+                      <section id="section-tzoid-groups">
+                          <menu class="content">
+
+                          </menu>
+                      </section>
+                  </div><!-- /content -->
+              </div><!-- /tabs -->
+          </section>
+      </div>
+      <script type="text/javascript" src="js\jquery-2.1.3.js"></script>
+      <script type="text/javascript" src="js/ChatGood.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+          //websocket
+          var g_userId = document.getElementById("myUserId").innerText;
+          var g_socket = io('127.0.0.1:6181');
+          g_socket.on('a message', function (data) {
+              console.log(data);
+              g_socket.emit('my other event', { my: 'data' });
+          });
+          g_socket.on('peer message', function (data) {
+              console.log("peer message ",data);
+              appendNetPeerMsg(data);
+          });
+          g_socket.on('group message', function (data) {
+              console.log("group message ", data);
+              appendNetGroupMsg(data);
+          });
+          //发送握手消息;
+          g_socket.emit('handleShake', { 'userId': g_userId });
+      </script>
+      <script type="text/javascript">
+          //聊天窗口
+          var sectionChat = document.getElementById("chat");
+          var sectionChatTabs = sectionChat.querySelector("ul");
+          var contentChat = sectionChat.querySelector(".content-wrap");
+          sectionChatTabs.firstElementChild.addEventListener("click", HandleChatClick);
+          EventClick(sectionChatTabs.firstElementChild);
+
+      </script>
+      <script type="text/javascript" src="js/cbpFWTabs.js"></script>
+      <script>
+          //好友列表和群列表Tab
+          new CBPFWTabs(document.getElementById("info").firstElementChild);
+      </script>
+      <script type="text/javascript">
+          //好友列表
+          var sectionFriends = document.getElementById("section-tzoid-friends");
+          var contentFriends = sectionFriends.firstElementChild;
+          //群组列表
+          var sectionGroups =  document.getElementById("section-tzoid-groups");
+          var contentGroups = sectionGroups.firstElementChild;
+          //聊天窗口列表
+          var sectionChat = document.getElementById("chat");
+          var ulChat = sectionChat.querySelector('ul');
+          //请求好友列表
+          $.ajax({
+              url: '/data/friendsList', dataType: 'Text', async: true, success: function (data) {
+                  AppendFriendsList(data);
+                  console.log(data);
+              }
+          });
+          //请求群列表;
+          $.ajax({
+              url: '/data/groupsList', dataType: 'Text', async: true, success: function (data) {
+                  AppendGroupList(data);
+                  console.log(data);
+              }
+          });
+      </script>
+  </body>
+</html>

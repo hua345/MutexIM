@@ -1,0 +1,282 @@
+﻿.chatNav {
+    text-align:right;
+}
+.chatNavLeft {
+float:left;
+}
+.FriendsInfo {
+    vertical-align:middle;
+}
+.content li {
+    list-style: none;
+	font-size: 13px;
+    display:block;
+    height:70px;
+}
+.content img{
+		border-radius: 50%;
+		border: 3px solid #0d9564;
+        margin: 5px 5px 5px 15px;
+        width:50px;
+        height:50px;
+        float:left;
+	}
+.content .userInfo {
+    display:inline-block;
+    text-align:center;
+    vertical-align:middle;
+    font-size:18px;
+    line-height:32px;
+    margin-top: 20px;
+    left:120px;
+    position:absolute;
+}
+.content .userInfo:hover{
+    color:#2CC185;
+    cursor:pointer;
+}
+#chatContainer {
+    width:100%;
+    padding:15px 15px;
+}
+#chat {
+    width:calc(100% - 400px);
+    height:700px;
+    display:inline-block;
+}
+    #chat .close {
+        width:30px;
+        height:30px;
+        position:absolute;
+        right:15px;
+        top:5px;
+    }
+        #chat .close:hover {
+        border-radius: 50%;
+        background-image:url("../image/iconfont-close.svg");
+        background-size:30px 30px;
+        }
+
+#info {
+    width:300px;
+    height:700px;
+    margin-left:50px;
+    display:inline-block;
+}
+
+.tabs {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+    /* Nav */
+    .tabs nav {
+        text-align: center;
+    }
+
+        .tabs nav ul {
+            position: relative;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: flex;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1200px;
+            list-style: none;
+            -ms-box-orient: horizontal;
+            -ms-box-pack: center;
+            -webkit-flex-flow: row wrap;
+            -moz-flex-flow: row wrap;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            justify-content: center;
+        }
+
+            .tabs nav ul li {
+                position: relative;
+                z-index: 1;
+                display: block;
+                margin: 0;
+                text-align: center;
+                -webkit-flex: 1;
+                -moz-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+
+        .tabs nav a {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 2.5em;
+        }
+
+            .tabs nav a span {
+                vertical-align: middle;
+                font-size: 0.75em;
+            }
+
+        .tabs nav li.tab-current a {
+            color: #74777b;
+        }
+
+        .tabs nav a:focus {
+            outline: none;
+        }
+
+.navIcon::before {
+    z-index: 10;
+    display: inline-block;
+    margin: 0 0.4em 0 0;
+    vertical-align: middle;
+    text-transform: none;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 1.3em;
+    font-family: '宋体';
+    line-height: 1;
+    speak: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-friends::before {
+	content: " ";
+    width:30px;
+    height:30px;
+    background-image:url("../image/iconfont-yonghu.svg");
+    background-size:30px 30px;
+}
+.icon-groups::before {
+	content: " ";
+    width:30px;
+    height:30px;
+    background-size:30px 30px;
+    background-image:url("../image/iconfont-qunzu.svg");
+}
+/* Content */
+.content-wrap {
+    position: relative;
+}
+
+    .content-wrap section {
+        display: none;
+        margin: 0 auto;
+        padding: 1em;
+        max-width: 1200px;
+        text-align: center;
+    }
+
+        .content-wrap section.content-current {
+            display: block;
+        }
+
+        .content-wrap section .content {
+            margin: 0;
+            padding:0;
+            color: #000;
+            height:600px;
+        }
+
+/* Fallback */
+.no-js .content-wrap section {
+    display: block;
+    padding-bottom: 2em;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+
+.no-flexbox nav ul {
+    display: block;
+}
+
+    .no-flexbox nav ul li {
+        min-width: 15%;
+        display: inline-block;
+    }
+
+@media screen and (max-width: 58em) {
+    .tabs nav a.navIcon span {
+        display: none;
+    }
+
+    .tabs nav a:before {
+        margin-right: 0;
+    }
+}
+.tabs-style-tzoid {
+    max-width: 1200px;
+}
+
+    .tabs-style-tzoid nav {
+        padding: 0 1em;
+    }
+
+        .tabs-style-tzoid nav ul li {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+            .tabs-style-tzoid nav ul li a {
+                padding: 0 1.5em 0 0.3em;
+                color: #0d9564;
+                -webkit-transition: color 0.2s;
+                transition: color 0.2s;
+            }
+
+@media screen and (max-width: 54em) {
+    .tabs-style-tzoid nav ul li a {
+        padding: 0 0.5em 0 0.3em;
+    }
+}
+
+.tabs-style-tzoid nav ul li a:hover,
+.tabs-style-tzoid nav ul li a:focus {
+    color: #fff;
+}
+
+.tabs-style-tzoid nav ul li.tab-current a,
+.tabs-style-tzoid nav ul li.tab-current a:hover {
+    color: #2CC185;
+}
+
+.tabs-style-tzoid nav ul li a span {
+    font-weight: 500;
+    font-size: 0.75em;
+}
+
+.tabs-style-tzoid nav ul li a::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    outline: 1px solid transparent;
+    border-radius: 10px 10px 0 0;
+    background: #2CC185;
+    box-shadow: inset 0 -3px 3px rgba(0,0,0,0.05);
+    content: '';
+    -webkit-transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.tabs-style-tzoid nav ul li.tab-current a::after,
+.tabs-style-tzoid .content-wrap {
+	background: #fff;
+	box-shadow: none;
+}

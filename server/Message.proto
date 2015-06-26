@@ -1,0 +1,38 @@
+syntax = "proto3";
+package IM;
+enum RESULTERROR
+{
+	SUCCESS = 0;
+	USERNAME_ERROR = 1;
+	PASSWORD_ERROR = 2;
+	MSGSERVER_ERROR = 3;
+	LOGINSERVER_ERROR = 4;
+	ONLYONE_ERROR     = 5;
+}
+message MsgServerRequest{
+	string 		userID		= 1;		//用户ID
+}
+message MsgServResponse {
+	RESULTERROR	result = 1;		// 0 -- success, non-0 -- fail reason
+	sint32	port = 2;			//端口
+	string 		address = 3;	//地址
+}
+message LoginRequest {
+	sint32		onlineState	= 1;	//在线状态
+	string 		userID		= 2;		//用户ID
+	bytes 		password		= 3;		//密码
+}
+message LoginResponse {
+	RESULTERROR	result			= 1;			// 0 -- success, non-0 -- fail reason
+	sint32	online_status		= 2;	//在线状态
+	int64	 timeTamp	= 3;	//登录时间
+	
+	optional bytes  SessionID = 4;//秘钥种子
+	optional string userID	= 5;		//用户ID
+	optional string	name		= 6;			//用户名
+	optional string	nick_name	= 7;		//昵称
+	optional string	image_url	= 8;		//头像
+	optional string	position	= 9;     	//地区
+	optional string	email		= 10;        	//邮箱
+	optional int32  sex		= 11;			//性别	
+}

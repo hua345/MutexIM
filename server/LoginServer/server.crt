@@ -1,0 +1,73 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=CN, ST=Jiangxi, L=Nanchang, O=Jiangxi University of Traditional Chinese Medicine, OU=Computer Science, CN=SSL/TLS/emailAddress=2290910211@qq.com
+        Validity
+            Not Before: Mar 23 05:27:50 2015 GMT
+            Not After : Mar 20 05:27:50 2025 GMT
+        Subject: C=CN, ST=Jiangxi, O=Jiangxi University of Traditional Chinese Medicine, OU=Computer Science, CN=server_chenjianhua/emailAddress=2290910211@qq.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:9f:d3:c9:e2:cd:85:5b:b5:7c:8d:9a:cb:cd:e1:
+                    8e:50:f1:da:36:aa:c1:1a:85:65:02:93:c2:1a:d9:
+                    f9:97:0d:48:d3:80:d2:f0:9e:8a:bb:19:11:52:f3:
+                    8a:cd:d2:40:39:58:ec:37:9c:3d:74:29:25:53:d1:
+                    ba:dc:dc:6b:1a:0e:8a:ab:01:ac:36:ed:23:36:b4:
+                    de:a4:19:91:82:95:88:9d:aa:00:ca:1c:a2:35:77:
+                    44:8a:dd:8b:7e:49:4a:c0:35:8a:82:90:d3:fd:3f:
+                    0f:92:b6:11:f0:29:5c:bd:e4:23:52:08:da:6c:1b:
+                    41:a8:42:34:f9:51:e9:94:53
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                67:5B:FB:56:04:BA:C0:C1:93:BA:7D:91:46:9B:D3:D9:99:53:A3:B8
+            X509v3 Authority Key Identifier: 
+                keyid:E9:CE:BA:70:2D:DD:B0:9F:E0:67:22:7C:3D:DB:45:CA:35:FC:C3:B8
+
+    Signature Algorithm: sha1WithRSAEncryption
+         01:c5:61:3c:42:13:c0:d8:5e:cc:ec:4f:18:e8:5a:e2:23:23:
+         3f:f4:f9:8f:2f:83:5a:0b:ff:b2:e9:75:6b:9f:9f:35:cd:ae:
+         d7:48:3a:84:51:14:ab:a7:2c:be:17:29:0a:13:2d:6a:b0:c2:
+         5e:96:ba:6a:ab:08:18:87:2a:25:aa:26:cc:b0:56:73:07:d5:
+         39:69:e9:2e:25:a1:f1:a3:d6:ad:c6:18:9f:e4:05:3b:61:02:
+         61:8c:94:df:ba:2e:e0:d2:52:3d:be:75:36:83:9c:c8:7d:b5:
+         e5:a1:41:95:a4:cd:5f:6d:27:df:14:85:af:37:e6:d3:40:88:
+         5b:87:3f:58:5f:85:4e:94:7a:47:1c:c2:7f:e1:c6:ae:94:43:
+         eb:f1:65:58:e9:ee:e4:1e:35:28:6e:22:20:12:b4:c5:f8:ff:
+         7d:49:e8:eb:3b:68:80:09:8c:4a:b2:aa:06:9a:94:9f:a6:e9:
+         79:99:ad:82:bc:33:87:69:4a:fd:02:7e:f0:dd:e9:30:a0:ce:
+         00:ce:f5:50:f0:3e:4f:7d:f0:a9:54:c6:be:ef:97:c7:be:b9:
+         f2:59:20:a6:03:01:a3:ce:9a:4f:2c:c7:6d:08:6f:9f:07:72:
+         18:74:95:14:63:28:86:4e:6c:26:3c:bb:0e:7f:1d:bb:df:71:
+         c1:c2:f6:24
+-----BEGIN CERTIFICATE-----
+MIID6DCCAtCgAwIBAgIBATANBgkqhkiG9w0BAQUFADCBvjELMAkGA1UEBhMCQ04x
+EDAOBgNVBAgMB0ppYW5neGkxETAPBgNVBAcMCE5hbmNoYW5nMTswOQYDVQQKDDJK
+aWFuZ3hpIFVuaXZlcnNpdHkgb2YgVHJhZGl0aW9uYWwgQ2hpbmVzZSBNZWRpY2lu
+ZTEZMBcGA1UECwwQQ29tcHV0ZXIgU2NpZW5jZTEQMA4GA1UEAwwHU1NML1RMUzEg
+MB4GCSqGSIb3DQEJARYRMjI5MDkxMDIxMUBxcS5jb20wHhcNMTUwMzIzMDUyNzUw
+WhcNMjUwMzIwMDUyNzUwWjCBtjELMAkGA1UEBhMCQ04xEDAOBgNVBAgMB0ppYW5n
+eGkxOzA5BgNVBAoMMkppYW5neGkgVW5pdmVyc2l0eSBvZiBUcmFkaXRpb25hbCBD
+aGluZXNlIE1lZGljaW5lMRkwFwYDVQQLDBBDb21wdXRlciBTY2llbmNlMRswGQYD
+VQQDDBJzZXJ2ZXJfY2hlbmppYW5odWExIDAeBgkqhkiG9w0BCQEWETIyOTA5MTAy
+MTFAcXEuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCf08nizYVbtXyN
+msvN4Y5Q8do2qsEahWUCk8Ia2fmXDUjTgNLwnoq7GRFS84rN0kA5WOw3nD10KSVT
+0brc3GsaDoqrAaw27SM2tN6kGZGClYidqgDKHKI1d0SK3Yt+SUrANYqCkNP9Pw+S
+thHwKVy95CNSCNpsG0GoQjT5UemUUwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCG
+SAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4E
+FgQUZ1v7VgS6wMGTun2RRpvT2ZlTo7gwHwYDVR0jBBgwFoAU6c66cC3dsJ/gZyJ8
+PdtFyjX8w7gwDQYJKoZIhvcNAQEFBQADggEBAAHFYTxCE8DYXszsTxjoWuIjIz/0
++Y8vg1oL/7LpdWufnzXNrtdIOoRRFKunLL4XKQoTLWqwwl6WumqrCBiHKiWqJsyw
+VnMH1Tlp6S4lofGj1q3GGJ/kBTthAmGMlN+6LuDSUj2+dTaDnMh9teWhQZWkzV9t
+J98Uha835tNAiFuHP1hfhU6Uekccwn/hxq6UQ+vxZVjp7uQeNShuIiAStMX4/31J
+6Os7aIAJjEqyqgaalJ+m6XmZrYK8M4dpSv0CfvDd6TCgzgDO9VDwPk998KlUxr7v
+l8e+ufJZIKYDAaPOmk8sx20Ib58Hchh0lRRjKIZObCY8uw5/HbvfccHC9iQ=
+-----END CERTIFICATE-----

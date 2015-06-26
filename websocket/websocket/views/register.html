@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Websocket Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+ <nav></nav>
+  <div class="form">
+  <form id="registerForm" method="POST">
+      <input id = "userId" data-status="false" name="userId" type="text" placeholder="Username"  />
+      <span id ="userIdTip"></span>
+      <input id="password1" data-status="false" name="password" type="password" placeholder="Password" value="" />
+      <span id="passwordTip1"></span>
+      <input id="password2" data-status="false" type="password" placeholder="Password" value="" />
+     <span id="passwordTip2"></span>
+      <input type="email" id="inputEmail" name="email" placeholder="Email" required="required" />
+      <span id="emailTip"></span>
+     <input id="submitBtn"  type="button"  value="注册" />
+  </form>
+  </div><!--form-->
+<div class="recovery">
+<span><a href="/login">登录</a></span>
+</div>
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript">
+        //获取标签
+        var inputUserId = document.getElementById("userId");
+        var userIdTip = document.getElementById("userIdTip");
+        var passwordTip1 = document.getElementById("passwordTip1");
+        var passwordTip2 = document.getElementById("passwordTip2");
+        var password1 = document.getElementById("password1");
+        var password2 = document.getElementById("password2");
+        var emailTip = document.getElementById("emailTip");
+        var inputEmail = document.getElementById("inputEmail");
+        var submitBtn = document.getElementById("submitBtn");
+        //监听事件
+        inputUserId.addEventListener("blur", checkUserID);
+        password1.addEventListener("blur", checkPassword)
+        password2.addEventListener("blur", checkEqualPass);
+        submitBtn.addEventListener("click", checkRegister);
+        function checkRegister()
+        {
+            //HTML5邮箱是否有效
+            if (inputEmail.validity.valid) {
+                if ("true" == inputUserId.dataset["status"] && "true" == password1.dataset["status"] && "true" == password2.dataset["status"]) {
+                    document.getElementById("registerForm").submit();
+                }
+                else {
+                    alert("用户名或密码不合法");
+                }
+            }
+            else {
+                alert("无效邮箱");
+            }
+        }
+        //检测密码长度
+        function checkPassword()
+        {
+            if(5 < password1.value.length )
+            {
+                if(password1.value.length < 50)
+                {
+                    password1.dataset["status"] = "true";
+                    passwordTip1.innerText = "";
+                }
+                else
+                {
+                    password1.dataset["status"] = "false";
+                    passwordTip1.innerText = "密码长度过长，长度小于50";
+                }
+            }
+            else
+            {
+                password1.dataset["status"] = "false";
+                passwordTip1.innerText = "密码长度过短，长度大于等于6";
+            }
+        }
+        //检测密码是否相同
+        function checkEqualPass()
+        {
+            var passStr1 = password1.value;
+            var passStr2 = password2.value;
+            if(passStr1 == passStr2)
+            {
+                password2.dataset["status"] = "true";
+                passwordTip2.innerText = "";
+            }
+            else
+            {
+                password2.dataset["status"] = "false";
+                passwordTip2.innerText = "密码不一致";
+            }
+        }
+        //检测用户ID是否可用
+        function checkUserID() {
+            console.log("test");
+            var valueStr = inputUserId.value;
+            if (5 <= valueStr.length && valueStr.length <= 15) {
+                $.ajax({
+                    url: "/checkUserId?userId=" + valueStr, dataType: 'Text', async: true, success: function (data) {
+                        if ("OK" == data) {
+                            userIdTip.innerText = "";
+                            inputUserId.dataset["status"] = "true";
+                        }
+                        else {
+                            inputUserId.dataset["status"] = "false";
+                            userIdTip.innerText = "用户名已经注册";
+                        }
+                    }
+                });
+
+            }
+            else {
+                inputUserId.dataset["status"] = "false";
+                userIdTip.innerText = "用户ID长度大于5小于15";
+            }
+        }
+   </script>
+</body>
+
+</html>

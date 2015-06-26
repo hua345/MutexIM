@@ -1,0 +1,7 @@
+syntax = "proto3";
+package IMServer;
+
+message serverGroupMsg{
+	repeated string userId = 1;
+	bytes        msgData = 2;
+}

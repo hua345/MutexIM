@@ -1,0 +1,141 @@
+syntax = "proto3";
+package IMChat;
+
+message shakeHandleReq{
+	int64 timestamp = 1;//时间戳
+	string userID   = 2;//用户ID
+}
+message shakeHandleRes{
+	int64 timestamp = 1;//时间戳
+	sint32  result  = 2;//返回结果
+}
+message UserData{
+	sint32	online_status		= 1;	//在线状态
+	int64	timestamp	= 2;	//时间戳	
+	string  user_id	= 3;		//用户ID
+	optional string	name		= 4;			//用户名
+	optional string	nick_name	= 5;		//昵称
+	optional string	image_url	= 6;		//头像
+	optional string	position	= 7;     	//地区
+	optional string	email		= 8;        	//邮箱
+	optional sint32  sex		= 9;			//性别
+}
+//消息信令
+message MsgData{
+	enum   MSGTYPE 
+	{
+		CHAT_TEXT   = 0;
+		CHAT_AUDIO	= 1;
+		GROUPCHAT_TEXT = 2;
+		GROUPCHAT_AUDIO = 3;
+	}	
+	int64 timestamp = 1;		//时间戳	
+	fixed32 SequenceNumber = 2;//序列号
+	string  fromId = 3; 	// 发消息者
+	string  toID   = 4; 	//收消息者
+	bytes  msgData = 5;	//消息内容
+	MSGTYPE  type   = 6;	//消息类型
+}
+//未读消息请求
+message UnreadMsgRequest {
+	string userId = 1;
+	int64 timestamp  = 2;
+}
+//未读消息响应
+message UnreadMsgResponse {
+    int32	msgCount  = 1;//未读消息数
+	int64 timestamp = 2;//时间戳	
+	string  userID   = 3; //收消息者
+	repeated bytes  msgData = 4;//消息内容,直接出数据库读出的二进制消息;
+}
+//在线联系人通知
+message PeerOnlineNotify{
+	int32	onlineCount  = 1;//在线人数
+	int64 timestamp = 2;//时间戳	
+	string  userID   = 3; //收消息者
+	repeated string  msgData = 4;//在线ID,相当list容器
+}
+//用户状态通知
+message PeerStatusNotify{
+	fixed32	statusCount  = 1;//上线人数
+	int64 timestamp = 2;//时间戳	
+	string  userID   = 3; //收消息者
+	repeated string  msgData = 4;//上线ID,相当list容器
+}
+//获取用户信息请求
+message PeerUserInfoRequest{
+	int64 timestamp = 1;//时间戳	
+	string userID  = 2;//用户ID
+	string requestID = 3;//请求ID
+}
+//用户信息返回响应
+message PeerUserInfoResponse{
+	int64 timestamp = 1;//时间戳	
+	UserData userInfo  = 2;
+}
+//所有好友信息请求
+message PeerAllUserInfoRequest{
+	int64 timestamp = 1;//时间戳	
+	string userID = 2;
+}
+//所有好友信息返回 
+message PeerAllUserInfoResponse{
+	int64 timestamp = 1;//时间戳	
+	int32	friendsCount  = 2;//好友人数
+	string  userID   = 3; //收消息者
+	repeated UserData  msgData = 4;//好友信息,相当list容器
+}
+//好友分组信息请求
+message PeerCategoryRequest{
+	int64 timestamp = 1;//时间戳	
+	string userID = 2;
+}
+//好友分组信息响应
+message PeerCategoryResponse{
+	int64 timestamp = 1;//时间戳	
+	int32	categoryCount  = 2;//分类数
+	string  userID   = 3; //收消息者
+	message idCategory{
+		string categoryId = 1;//分类ID
+		string friendID  = 2;//好友ID
+	}
+	repeated idCategory msgData = 4;//好友信息,相当list容器
+}
+// 所有群号请求
+message GroupAllRequest{
+	int64 timestamp = 1;//时间戳	
+	string userID = 2;
+}
+//群详细消息
+message GroupInfo{
+	string groupID = 2;
+	string groupName = 3;
+	string image_url  = 4;//头像
+}
+// 所有群号响应
+message GroupAllResponse{
+	int64 timestamp = 1;//时间戳	
+	int32 groupCount = 2;//群的数目
+	string userID = 3;
+	repeated GroupInfo msgData = 4;//群信息,相当list容器
+}
+message GroupMemberInfo{
+	string userID = 2;
+	optional string nick_name = 3;
+	optional string image_url  = 4;//头像
+	optional int32 online_status = 5;
+}
+// 群成员请求
+message GroupMembeRequest{
+	int64 timestamp = 1;//时间戳	
+	string groupID = 2;
+	string userID = 3;
+}
+//群成员响应
+message GroupMemberResponse{
+	int64 timestamp = 1;//时间戳	
+	int32 memberCount = 2;//群成员个数
+	string userID = 3;
+	string groupID  = 4;
+	repeated GroupMemberInfo msgData = 5;
+}

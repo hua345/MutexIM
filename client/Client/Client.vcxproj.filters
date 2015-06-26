@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtobufCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtobufDispatcher.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol_header.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLogin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncTcpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncDispatcher.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncProtobufCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StructData.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqlite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFriends.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGroups.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgChat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGroupChat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageChat.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTypeDefine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SSL_TcpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtobufCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLogin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncTcpClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncProtobufCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqlite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFriends.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGroups.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgChat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGroupChat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageChat.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SSL_TcpClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Client.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Client.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\FndLstSel.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\FndLstSel2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\list_unselected.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<server>
+  <log>
+    <folder_path>/opt/logs/</folder_path>
+  </log>
+  <socket>
+    <listenAddress>127.0.0.1</listenAddress>
+    <port_number>9999</port_number>
+    <wait_request_timeout>10</wait_request_timeout>
+  </socket>
+</server>

@@ -1,0 +1,76 @@
+﻿
+h1{
+  text-align: center;
+  color: #fff;
+  font-weight: 200;
+  margin-top: 10px;
+}
+
+nav{
+  float: none; 
+  clear: both;
+  overflow: hidden;
+  width: 800px; 
+  margin: 0px auto;
+  background: #eee;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav li{
+  float: left; 
+}
+
+nav li a{
+  display: block; 
+  width: 200px; 
+  padding: 20px; 
+  border-top: 5px solid; 
+  position: relative; 
+  background: #fff;
+  z-index: 2;
+  text-decoration: none;
+  color: #444;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+}
+	
+nav li a:hover{ border-top: 0px; color: #fff;}
+nav li:first-child a{ border-top: 10px solid #3498db; }
+nav li:nth-child(2) a{ border-top: 10px solid #ffd071; }
+nav li:nth-child(3) a{ border-top: 10px solid #f0776c; }
+nav li:last-child a{ border-top: 10px solid #1abc9c; }
+
+.first li a:after{
+  top: 50%; 
+  height: 0px;  
+}
+nav.first li a:hover:after{ top: 0px; height: 100%; }
+
+nav li a:after { 
+  content: "";
+  height: 100%; 
+  left: 0; 
+  width: 100%;
+  position: absolute; 
+  transition: all 0.3s ease 0s; 
+  -webkit-transition: all 0.3s ease 0s; 
+  z-index: -1;
+}
+
+nav.first li a:hover:after{ top: 0px; height: 100%; }
+nav.second li a:hover:after, nav.third li a:hover:after{height: 100%; }
+nav.fourth li a:hover:after{ left: 0px; width: 100%; }
+nav.fifth li a:hover:after{ left: 0px; width: 100%; }
+nav.sixth li a:hover:after{ width: 100%; }
+
+
+nav li:first-child a:after{ background: #3498db; }
+nav li:nth-child(2) a:after{ background: #ffd071; }
+nav li:nth-child(3) a:after{ background: #f0776c; }
+nav li:last-child a:after{ background: #1abc9c; }
