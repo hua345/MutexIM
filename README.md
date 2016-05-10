@@ -46,12 +46,13 @@ TCP服务器和客户端采用C++编写，通过TCP协议与服务器连接并�
 
 有序集合serverRank存储消息服务器套接字信息及排名。
 ###主要类和文件说明
-Tcp_Server:服务器网络连接类。采用Boost Asio作为异步模型，实现高性能网络服务器。监听端口、接收新的连接，对每个连接创建新的Tcp_Session对象。
-Tcp_Session:网络连接Session类。接收、发送TCP流，PING数据包，错误处理，消息接收到后交付ProtubufCodec处理[22]。
-Ssl_Server:安全传输层TLS/SSL服务器网络连接类。
-Ssl_Session:安全传输层TLS/SSL连接Session类。
-Connection_Manager:网络连接管理类。管理连接用户ID与连接的映射关系，创建、退出时要处理的相关数据。
-MyBuffer:数据缓存区类。
-ProtubufCodec:网络消息封包和拆包及加密解密类。
-ProtubufDispatcher:处理函数和不同消息类型之间映射类。
-Credis：与redis数据库操作类，像管道，多操作原子性等复杂操作通过返回redisContext来处理。
+
+- `Tcp_Server`:服务器网络连接类。采用Boost .Asio作为异步模型，实现高性能网络服务器。监听端口、接收新的连接，对每个连接创建新的Tcp_Session对象。
+- `Tcp_Session`:网络连接Session类。接收、发送TCP流，PING数据包，错误处理，消息接收到后交付ProtubufCodec处理[22]。
+- `Ssl_Server`:安全传输层TLS/SSL服务器网络连接类。
+- `Ssl_Session`:安全传输层TLS/SSL连接Session类。
+- `Connection_Manager`:网络连接管理类。管理连接用户ID与连接的映射关系，创建、退出时要处理的相关数据。
+- `MyBuffer:`数据缓存区类。
+- `ProtubufCodec`:网络消息封包和拆包及加密解密类。
+- `ProtubufDispatcher`:处理函数和不同消息类型之间映射类。
+- `Credis`：与redis数据库操作类，像管道，多操作原子性等复杂操作通过返回redisContext来处理。
