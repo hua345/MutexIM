@@ -1,14 +1,21 @@
-###这是我的毕业设计
-###传统客户端采用C++开发，web端采用nodejs开发。不同服务器之间通过redis的发布订阅功能来互联。
+### 这是我的毕业设计
+
+### 传统客户端采用C++开发，web端采用nodejs开发。不同服务器之间通过redis的发布订阅功能来互联。
+
 ![mfcChat](./image/mfcChat.png)
 ![webChat](./image/webChat.png)
 ![imChat](./image/imChat.png)
-###系统总体设计
+
+### 系统总体设计
 TCP服务器和客户端采用C++编写，通过TCP协议与服务器连接并由SSL安全传输层保证安全，实现即时通信。浏览器端通过HTML5中提出的Websocket协议与服务器连接，Websocket服务器和HTTP服务器采用Nodejs编写。不同物理服务器，不同语言服务器采用统一的数据传输格式来传输，借助redis数据库的Pub/Sub模式和消息队列，来进行服务器之间的信息通信。对数据库进行Master/Salve备份。
 ![系统总体设计](./image/design.png)
-###数据库设计
+
+### 数据库设计
+
 为了提高对数据的处理，采用缓存数据库Redis。Redis是一个Key-Value数据库，数据库设计主要体现在Key的设计。存储的数据是二进制安全的。
-###用户信息哈希表
+
+### 用户信息哈希表
+
 |user:001|info|
 |---|---|
 |useId |用户ID |
@@ -18,13 +25,15 @@ TCP服务器和客户端采用C++编写，通过TCP协议与服务器连接并�
 |email    |邮箱|
 |lastLoginTime|最近登陆时间|
 |nickname |昵称|
-###群信息哈希表
+### 群信息哈希表
 |group:001|info|
 |------|------|
 |groupId|群号|
 |groupName|群名称|
 |imageUrl|群头像|
-###用户登录信息哈希表
+
+### 用户登录信息哈希表
+
 |logined:14006|info|
 |------|----|
 |address |消息服务器地址|
@@ -45,7 +54,7 @@ TCP服务器和客户端采用C++编写，通过TCP协议与服务器连接并�
 |哈希表loginMap:(userid)|存储用户登陆密钥和消息服务器信息。|如：loginMap:14006。|
 
 有序集合serverRank存储消息服务器套接字信息及排名。
-###主要类和文件说明
+### 主要类和文件说明
 
 - `Tcp_Server`:服务器网络连接类。采用Boost .Asio作为异步模型，实现高性能网络服务器。监听端口、接收新的连接，对每个连接创建新的Tcp_Session对象。
 - `Tcp_Session`:网络连接Session类。接收、发送TCP流，PING数据包，错误处理，消息接收到后交付ProtubufCodec处理[22]。
